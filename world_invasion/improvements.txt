@@ -1,0 +1,6 @@
+Improvements/Features:
+
+1) Add rotating gun/cannon feature
+2) Have rocket rotate and translate
+3) Have aliens shoot back
+4) Have better moving backgrounds
