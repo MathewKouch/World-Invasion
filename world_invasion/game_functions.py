@@ -134,8 +134,8 @@ def check_bullet_alien_collision(ai_settings, screen, ship, aliens, bullets, sb,
         # Increase level.
         stats.level += 1
         sb.prep_level()
-
         create_fleet(ai_settings, screen, ship, aliens)
+        ship.center_ship
 
 def update_background(stars):
     stars.update()
@@ -187,8 +187,8 @@ def create_fleet(ai_settings, screen,ship,aliens):
     number_aliens_x = get_number_aliens_x(ai_settings, alien.rect.width)
     number_rows = get_number_rows(ai_settings,ship.rect.height,alien.rect.height)
 
-    number_rows = 2
-    number_aliens_x = 16
+    number_rows = 1
+    number_aliens_x = 8
     # Create fleet of aliens
     for row_number in range(number_rows):
         for alien_number in range(number_aliens_x):

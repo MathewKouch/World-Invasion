@@ -20,8 +20,8 @@ class Ship(Sprite):
         self.screen_rect = screen.get_rect()
 
         # starting angle is 90 degrees, most closest position to bottom of screen. theta between [-180,180) 
-        self.theta = float(270.0)
-        self.theta_ship = float(0.0)
+        self.theta = 270.0
+        self.theta_ship = 0.0
 
         self.r =  self.ai_settings.world_radius
         self.rect.centerx = self.screen_rect.centerx 
@@ -77,14 +77,18 @@ class Ship(Sprite):
         # self.image = pygame.image.load('./images/orange_space_ship.png')
         # self.image = pygame.transform.scale(self.image,SHIP_SIZE['square-sm'])
         # self.image = pygame.transform.rotate(self.image,-(self.theta-270))
+
         self.rect.centerx = float(self.x)
         self.rect.centery = float(self.y)
 
     def blitme(self):
         """Draw the ship at its current location."""
-        self.screen.blit(self.image,self.rect)
+        self.screen.blit(self.image, self.rect)
 
     def center_ship(self):
         """Center the ship on screen"""
-        self.centerx = self.screen_rect.centerx
-        self.centery = self.screen_rect.centery - self.r
+        
+        # self.centerx = self.screen_rect.centerx
+        # self.centery = self.screen_rect.centery - self.r
+        self.rect.centerx = self.screen_rect.centerx 
+        self.rect.centery = self.screen_rect.centery - self.r
